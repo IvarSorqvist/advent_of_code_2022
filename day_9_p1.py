@@ -41,9 +41,6 @@ class Grid:
 		if ((abs(self.pH_x - self.pT_x) > 1) or (abs(self.pH_y - self.pT_y) > 1)):
 			self.mv_tail(direction)
 
-		print(f"Dir: {direction}, H: ({self.pH_x}, {self.pH_y}), T: ({self.pT_x}, {self.pT_y})")
-		print("len_dict: ", len(self.T_pos), str(self.pT_x) + str(self.pT_y))
-
 
 def main():
 
@@ -61,13 +58,10 @@ def main():
 	grid = Grid()
 
 	for inst in file_input:
-		print(inst)
 		for i in range(int(inst[1])):
 			grid.mv(inst[0])
 
 	print("Tail pos length: ", len(grid.T_pos))
-
-	print(json.dumps(grid.T_pos, indent=2))
 
 
 if __name__ == "__main__":
